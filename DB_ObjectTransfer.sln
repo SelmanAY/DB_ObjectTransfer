@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DB_ObjectTransfer", "DB_ObjectTransfer\DB_ObjectTransfer.csproj", "{50198196-75C4-4B3B-A5E8-20AC89559AA3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Smo", "Smo", "{4B59291A-06DC-4384-B44E-2D47343C43BC}"
+	ProjectSection(SolutionItems) = preProject
+		Smo\Microsoft.SqlServer.ConnectionInfo.dll = Smo\Microsoft.SqlServer.ConnectionInfo.dll
+		Smo\Microsoft.SqlServer.Smo.dll = Smo\Microsoft.SqlServer.Smo.dll
+		Smo\Microsoft.SqlServer.SmoExtended.dll = Smo\Microsoft.SqlServer.SmoExtended.dll
+		Smo\Microsoft.SqlServer.SqlClrProvider.dll = Smo\Microsoft.SqlServer.SqlClrProvider.dll
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{50198196-75C4-4B3B-A5E8-20AC89559AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50198196-75C4-4B3B-A5E8-20AC89559AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50198196-75C4-4B3B-A5E8-20AC89559AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50198196-75C4-4B3B-A5E8-20AC89559AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
