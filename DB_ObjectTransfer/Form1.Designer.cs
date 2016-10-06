@@ -29,9 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.fastDataListView1 = new BrightIdeasSoftware.FastDataListView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.miClear = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClearAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClearSelected = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClearSucceded = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClearFailed = new System.Windows.Forms.ToolStripMenuItem();
+            this.imAutoScroll = new System.Windows.Forms.ToolStripMenuItem();
+            this.reseedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miReseedAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.miUnreseedAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.miReseedSelected = new System.Windows.Forms.ToolStripMenuItem();
+            this.miUnreseedSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLoadCsv = new System.Windows.Forms.Button();
             this.barRenderer1 = new BrightIdeasSoftware.BarRenderer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -46,22 +57,12 @@
             this.btnTransfer = new System.Windows.Forms.Button();
             this.pbTotal = new System.Windows.Forms.ProgressBar();
             this.btnLoadFromDb = new System.Windows.Forms.Button();
-            this.miClearAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.miClearSelected = new System.Windows.Forms.ToolStripMenuItem();
-            this.miClearSucceded = new System.Windows.Forms.ToolStripMenuItem();
-            this.miClearFailed = new System.Windows.Forms.ToolStripMenuItem();
-            this.imAutoScroll = new System.Windows.Forms.ToolStripMenuItem();
             this.txtSrcPass = new CueTextBox();
             this.txtSrcLogin = new CueTextBox();
             this.txtSrcServer = new CueTextBox();
             this.txtDstPass = new CueTextBox();
             this.txtDstLogin = new CueTextBox();
             this.txtDstServer = new CueTextBox();
-            this.reseedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miReseedAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.miUnreseedAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.miReseedSelected = new System.Windows.Forms.ToolStripMenuItem();
-            this.miUnreseedSelected = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.fastDataListView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -98,7 +99,7 @@
             this.reseedToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(133, 70);
             // 
             // miClear
             // 
@@ -108,8 +109,82 @@
             this.miClearSucceded,
             this.miClearFailed});
             this.miClear.Name = "miClear";
-            this.miClear.Size = new System.Drawing.Size(152, 22);
+            this.miClear.Size = new System.Drawing.Size(132, 22);
             this.miClear.Text = "Clear";
+            // 
+            // miClearAll
+            // 
+            this.miClearAll.Name = "miClearAll";
+            this.miClearAll.Size = new System.Drawing.Size(157, 22);
+            this.miClearAll.Text = "All";
+            this.miClearAll.Click += new System.EventHandler(this.miClearAll_Click);
+            // 
+            // miClearSelected
+            // 
+            this.miClearSelected.Name = "miClearSelected";
+            this.miClearSelected.Size = new System.Drawing.Size(157, 22);
+            this.miClearSelected.Text = "Selected";
+            this.miClearSelected.Click += new System.EventHandler(this.miClearSelected_Click);
+            // 
+            // miClearSucceded
+            // 
+            this.miClearSucceded.Name = "miClearSucceded";
+            this.miClearSucceded.Size = new System.Drawing.Size(157, 22);
+            this.miClearSucceded.Text = "Succeded Items";
+            this.miClearSucceded.Click += new System.EventHandler(this.miClearSucceded_Click);
+            // 
+            // miClearFailed
+            // 
+            this.miClearFailed.Name = "miClearFailed";
+            this.miClearFailed.Size = new System.Drawing.Size(157, 22);
+            this.miClearFailed.Text = "Failed Items";
+            this.miClearFailed.Click += new System.EventHandler(this.miClearFailed_Click);
+            // 
+            // imAutoScroll
+            // 
+            this.imAutoScroll.Name = "imAutoScroll";
+            this.imAutoScroll.Size = new System.Drawing.Size(132, 22);
+            this.imAutoScroll.Text = "Auto Scroll";
+            this.imAutoScroll.Click += new System.EventHandler(this.imAutoScroll_Click);
+            // 
+            // reseedToolStripMenuItem
+            // 
+            this.reseedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miReseedAll,
+            this.miUnreseedAll,
+            this.miReseedSelected,
+            this.miUnreseedSelected});
+            this.reseedToolStripMenuItem.Name = "reseedToolStripMenuItem";
+            this.reseedToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.reseedToolStripMenuItem.Text = "Reseed";
+            // 
+            // miReseedAll
+            // 
+            this.miReseedAll.Name = "miReseedAll";
+            this.miReseedAll.Size = new System.Drawing.Size(167, 22);
+            this.miReseedAll.Text = "Check All";
+            this.miReseedAll.Click += new System.EventHandler(this.miReseedAll_Click);
+            // 
+            // miUnreseedAll
+            // 
+            this.miUnreseedAll.Name = "miUnreseedAll";
+            this.miUnreseedAll.Size = new System.Drawing.Size(167, 22);
+            this.miUnreseedAll.Text = "Uncheck All";
+            this.miUnreseedAll.Click += new System.EventHandler(this.miUnreseedAll_Click);
+            // 
+            // miReseedSelected
+            // 
+            this.miReseedSelected.Name = "miReseedSelected";
+            this.miReseedSelected.Size = new System.Drawing.Size(167, 22);
+            this.miReseedSelected.Text = "Check Selected";
+            this.miReseedSelected.Click += new System.EventHandler(this.miReseedSelected_Click);
+            // 
+            // miUnreseedSelected
+            // 
+            this.miUnreseedSelected.Name = "miUnreseedSelected";
+            this.miUnreseedSelected.Size = new System.Drawing.Size(167, 22);
+            this.miUnreseedSelected.Text = "Uncheck Selected";
+            this.miUnreseedSelected.Click += new System.EventHandler(this.miUnreseedSelected_Click);
             // 
             // btnLoadCsv
             // 
@@ -296,41 +371,6 @@
             this.btnLoadFromDb.UseVisualStyleBackColor = true;
             this.btnLoadFromDb.Click += new System.EventHandler(this.btnLoadFromDb_Click);
             // 
-            // miClearAll
-            // 
-            this.miClearAll.Name = "miClearAll";
-            this.miClearAll.Size = new System.Drawing.Size(157, 22);
-            this.miClearAll.Text = "All";
-            this.miClearAll.Click += new System.EventHandler(this.miClearAll_Click);
-            // 
-            // miClearSelected
-            // 
-            this.miClearSelected.Name = "miClearSelected";
-            this.miClearSelected.Size = new System.Drawing.Size(157, 22);
-            this.miClearSelected.Text = "Selected";
-            this.miClearSelected.Click += new System.EventHandler(this.miClearSelected_Click);
-            // 
-            // miClearSucceded
-            // 
-            this.miClearSucceded.Name = "miClearSucceded";
-            this.miClearSucceded.Size = new System.Drawing.Size(157, 22);
-            this.miClearSucceded.Text = "Succeded Items";
-            this.miClearSucceded.Click += new System.EventHandler(this.miClearSucceded_Click);
-            // 
-            // miClearFailed
-            // 
-            this.miClearFailed.Name = "miClearFailed";
-            this.miClearFailed.Size = new System.Drawing.Size(157, 22);
-            this.miClearFailed.Text = "Failed Items";
-            this.miClearFailed.Click += new System.EventHandler(this.miClearFailed_Click);
-            // 
-            // imAutoScroll
-            // 
-            this.imAutoScroll.Name = "imAutoScroll";
-            this.imAutoScroll.Size = new System.Drawing.Size(152, 22);
-            this.imAutoScroll.Text = "Auto Scroll";
-            this.imAutoScroll.Click += new System.EventHandler(this.imAutoScroll_Click);
-            // 
             // txtSrcPass
             // 
             this.txtSrcPass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -393,51 +433,13 @@
             this.txtDstServer.Size = new System.Drawing.Size(185, 20);
             this.txtDstServer.TabIndex = 8;
             // 
-            // reseedToolStripMenuItem
-            // 
-            this.reseedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miReseedAll,
-            this.miUnreseedAll,
-            this.miReseedSelected,
-            this.miUnreseedSelected});
-            this.reseedToolStripMenuItem.Name = "reseedToolStripMenuItem";
-            this.reseedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.reseedToolStripMenuItem.Text = "Reseed";
-            // 
-            // miReseedAll
-            // 
-            this.miReseedAll.Name = "miReseedAll";
-            this.miReseedAll.Size = new System.Drawing.Size(167, 22);
-            this.miReseedAll.Text = "Check All";
-            this.miReseedAll.Click += new System.EventHandler(this.miReseedAll_Click);
-            // 
-            // miUnreseedAll
-            // 
-            this.miUnreseedAll.Name = "miUnreseedAll";
-            this.miUnreseedAll.Size = new System.Drawing.Size(167, 22);
-            this.miUnreseedAll.Text = "Uncheck All";
-            this.miUnreseedAll.Click += new System.EventHandler(this.miUnreseedAll_Click);
-            // 
-            // miReseedSelected
-            // 
-            this.miReseedSelected.Name = "miReseedSelected";
-            this.miReseedSelected.Size = new System.Drawing.Size(167, 22);
-            this.miReseedSelected.Text = "Check Selected";
-            this.miReseedSelected.Click += new System.EventHandler(this.miReseedSelected_Click);
-            // 
-            // miUnreseedSelected
-            // 
-            this.miUnreseedSelected.Name = "miUnreseedSelected";
-            this.miUnreseedSelected.Size = new System.Drawing.Size(167, 22);
-            this.miUnreseedSelected.Text = "Uncheck Selected";
-            this.miUnreseedSelected.Click += new System.EventHandler(this.miUnreseedSelected_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(412, 469);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

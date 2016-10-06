@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>data_transport.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=13.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -143,6 +146,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bullet_go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data_transport.ico" />
+    <Content Include="Resources\data_transport.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
